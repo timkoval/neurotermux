@@ -5,6 +5,8 @@ if not type -q pkg
     exit 1
 end
 
+set -x DEBIAN_FRONTEND noninteractive
+
 set -l packages \
     openssh \
     git \
@@ -24,7 +26,8 @@ set -l packages \
     tree \
     rsync
 
-pkg install -y $packages
+apt-get update -y
+apt-get install -y -o Dpkg::Options::=--force-confnew $packages
 
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
