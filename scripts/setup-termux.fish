@@ -118,7 +118,6 @@ printf '%s\n' \
     '    merged = branch --merged' \
     '    unmerged = branch --no-merged' \
     '    nonexist = remote prune origin --dry-run' \
-    '    delmerged = ! git branch --merged | egrep -v "(^\\*|main|master|dev|staging)" | xargs git branch -d' \
     '    delnonexist = remote prune origin' \
     '    update = submodule update --init --recursive' \
     '    foreach = submodule foreach' \
